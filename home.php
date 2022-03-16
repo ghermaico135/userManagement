@@ -254,6 +254,29 @@ if($('#edit_note_form')[0].checkValidity()){
  })
 
 
+//  Display detail note
+
+$('body').on('click', '.infoBtn',function(e){
+    e.preventDefault();
+    info_id =$(this).attr('id');
+    $.ajax({
+        url: 'assets/php/process.php',
+        method:'post',
+        body:{info_id:info_id},
+        success: function(response){
+            data = JSON.parse(response);
+            Swal.fire({
+                title:"<strong>Note:ID('+ data.id +' )</strong>",
+                type:'info',
+                html:"<br><b> Title: </b>" + data.title + '<br><b>  Note: </b>'+ data.note +
+                 '<br><b> written on</b>'+ data.created_at +'<br><b> Updated on</b>'+ data.updated_at,
+                showCloseButton:true,
+            })
+        }
+    })
+})
+
+
  //start of display all notes function
 
  displayAllNotes();

@@ -82,3 +82,11 @@ if (isset($_POST['del_id'])) {
 
     $cuser->delete_note($id);
 }
+
+// Handling info ajax requested
+
+if (isset($_POST['info_id'])) {
+    $id = $_POST['info_id'];
+    $row = $cuser->edit_note($id);
+    echo json_encode($row);
+}
