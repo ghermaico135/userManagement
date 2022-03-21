@@ -26,6 +26,8 @@ $verified = $data['verified'];
 
 $fname = strtok($cname, '');
 
+$reg_no = date('d M Y', strtotime($created_at));
+
 if ($verified == 0) {
     $verified = 'Not Verified';
 } else {

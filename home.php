@@ -24,6 +24,7 @@ require_once 'assets/php/header.php';
         </h5>
         <div class="card-body">
             <div class="table-responsive " id="showNote">
+                <p class="text-center lead mt-5">Please wait...</p>
             <!-- <table class="table table-striped table-center">
                 <thead>
                     <tr>
